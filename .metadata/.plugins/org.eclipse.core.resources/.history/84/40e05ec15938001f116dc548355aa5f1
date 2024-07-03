@@ -1,0 +1,10 @@
+package Website;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class GiaoVien extends ConNguoi{
+	private String monPhuTrach;
+	
+	
+}

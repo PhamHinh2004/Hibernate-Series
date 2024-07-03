@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Website.Adress&apos; to &apos;Address&apos;&#x0D;&#x0A;- Original project: &apos;Hibernate_One_To_Many_JPA&apos;&#x0D;&#x0A;- Original element: &apos;Website.Adress&apos;&#x0D;&#x0A;- Renamed element: &apos;Website.Address&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Adress&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;Website{Adress.java[Adress" matchStrategy="1" name="Address" qualified="false" references="true" similarDeclarations="false" stamp="1719590994307" textual="false" version="1.0"/>
+</session>

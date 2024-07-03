@@ -1,0 +1,22 @@
+package Website;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class test {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSeeFactory();
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		try {
+			session.getTransaction().begin();
+			Author author1 = new Author("author01", "Pham Van Hinh", new Date(System.currentTimeMillis()));
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

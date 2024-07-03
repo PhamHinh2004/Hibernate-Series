@@ -1,0 +1,16 @@
+package Website;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class Test {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSession();
+		Session session = sessionFactory.getCurrentSession();
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

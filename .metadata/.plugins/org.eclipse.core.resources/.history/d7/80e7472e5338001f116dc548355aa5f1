@@ -1,0 +1,22 @@
+package Website;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class test {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.getCurrentSession();
+		
+		try {
+			session.getTransaction().begin();
+			CuocHop cuocHop1 = new CuocHop();
+			cuocHop1.setDiaChi("Hà Nội");
+			CuocHop cuocHop2 = new CuocHop();
+			cuocHop2.setDiaChi("TP.HCM");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}
+ 

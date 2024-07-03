@@ -1,0 +1,43 @@
+package Website;
+
+import java.sql.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Data;
+
+//@Entity : đanh dấu đây là một 1 Entity trong database
+@Entity
+@Data
+@Builder
+public class Author {
+	@Id
+	private String author_Id;
+	private String name;
+	private Date dateOfBirth;
+
+	public String getAuthId() {
+		return author_Id;
+	}
+
+	public void setAuthId(String author_Id) {
+		this.author_Id = author_Id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+}

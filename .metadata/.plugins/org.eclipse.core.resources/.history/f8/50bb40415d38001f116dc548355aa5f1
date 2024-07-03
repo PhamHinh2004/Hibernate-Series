@@ -1,0 +1,25 @@
+package Website;
+
+import java.sql.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class Test {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSession();
+		Session session = sessionFactory.getCurrentSession();
+		try {
+			session.getTransaction().begin();
+			GiaoVien gv = new GiaoVien("gv1", "Pham Van Hinh", Date.valueOf("2025-07-01"), "Môn Toán");
+			SinhVien sinhVien = new SinhVien("gv1", "Pham Van Hinh", Date.valueOf("2025-07-01"), 9.0);
+			
+			session.save(gv);
+			session.save(sinhVien);
+			
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Cannot save data");
+		}
+	}
+}

@@ -1,0 +1,29 @@
+package Website;
+
+
+import java.sql.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class test {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSeeFactory();
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		try {
+			session.getTransaction().begin();
+			Author author1 = new Author("author01", "Pham Van Hinh", new Date(System.currentTimeMillis()));
+			Book book1 = new Book("book1", "Work of Life", 2000, author1);
+			Book book2 = new Book("book2", "Working Life", 3000, author1);
+				
+			Author author2 = new Author("author02", "Đề Cao", new Date(System.currentTimeMillis()));
+			Book book3 = new Book("book3", "Work of Life", 2000, author2);
+			Book book4 = new Book("book4", "Working Life", 3000, author2);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

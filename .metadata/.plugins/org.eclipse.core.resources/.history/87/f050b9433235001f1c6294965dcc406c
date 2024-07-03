@@ -1,0 +1,23 @@
+package Website;
+
+import java.sql.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Data;
+
+
+// @Entity : đanh dấu đây là một 1 Entity trong database
+@Entity
+@Data
+@Builder
+public class Book {
+	@Id
+	private String authId;
+	private String name;
+	private Date dateOfBirth;
+	
+	
+	
+}

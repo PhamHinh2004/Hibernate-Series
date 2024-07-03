@@ -1,0 +1,23 @@
+package Website;
+
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+
+@Entity
+public class NhanVien {
+	
+	@Id
+	private String id;
+	private String hoVaTen;
+	private Date dateOfBirthday;
+	
+	@ManyToMany(mappedBy = "danhSachNhanVien")
+	private Set<CuocHop> danhSachCuocHop = new HashSet<CuocHop>();
+	
+	
+}

@@ -1,0 +1,12 @@
+package Website;
+
+import org.hibernate.SessionFactory;
+
+public class HibernateUtil {
+	SessionFactory sessionFactory = buildSessionFactory();
+
+	private SessionFactory buildSessionFactory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

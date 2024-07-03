@@ -1,0 +1,32 @@
+package Website;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class Test2 {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactoy();
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		try {
+			session.getTransaction().begin();
+			String hpl = "select e from" + Address.class.getName() + " e";
+			List<Object[]> addresses = session.createQuery(hpl).list();
+			
+			for (Address address : addresses) {
+				System.out.println("id of address : " + address.getId());
+				System.out.println("name : " + address.getPerson().getName());
+				System.out.println("province : " + address.getProvince());
+				System.out.println("city: "+ address.getCity());
+			}
+			
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			System.out.println("Cannot handle your request!!!");
+			session.getTransaction().rollback();
+		}
+	}
+}

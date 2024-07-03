@@ -1,0 +1,15 @@
+package Website;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.service.ServiceRegistry;
+
+public class HibernateUtil {
+	private static final SessionFactory SESSIONFactory = buildSessionFactory();
+
+	private static SessionFactory buildSessionFactory() {
+		
+		return null;
+	}
+	
+}

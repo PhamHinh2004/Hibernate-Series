@@ -1,0 +1,83 @@
+package Website;
+
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+
+@Entity
+public class CuocHop {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String tenCuocHop;
+	private String diaChi;
+	private Date thoiGian;
+	
+//	@JoinTable(name = "CuocHop_NhanVien",
+//				joinColumns = {@JoinColumn(name = "cuocHop_id")}, inverseJoinColumns = {@JoinColumn(name= "nhanVien_id")})
+//	private Set<NhanVien> danhSachNhanVien = new HashSet<NhanVien>();
+
+	public CuocHop() {
+		super();
+	}
+
+//	public CuocHop(int id, String tenCuocHop, String diaChi, Date thoiGian, Set<NhanVien> danhSachNhanVien) {
+//		super();
+//		this.id = id;
+//		this.tenCuocHop = tenCuocHop;
+//		this.diaChi = diaChi;
+//		this.thoiGian = thoiGian;
+//		this.danhSachNhanVien = danhSachNhanVien;
+//	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTenCuocHop() {
+		return tenCuocHop;
+	}
+
+	public void setTenCuocHop(String tenCuocHop) {
+		this.tenCuocHop = tenCuocHop;
+	}
+
+	public String getDiaChi() {
+		return diaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
+
+	public Date getThoiGian() {
+		return thoiGian;
+	}
+
+	public void setThoiGian(Date thoiGian) {
+		this.thoiGian = thoiGian;
+	}
+
+	public Set<NhanVien> getDanhSachNhanVien() {
+		return danhSachNhanVien;
+	}
+
+	public void setDanhSachNhanVien(Set<NhanVien> danhSachNhanVien) {
+		this.danhSachNhanVien = danhSachNhanVien;
+	}
+	
+	
+	
+}

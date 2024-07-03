@@ -1,0 +1,21 @@
+package Website;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class Test {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactoy();
+		Session session = sessionFactory.getCurrentSession();
+		try {
+			
+			session.getTransaction().begin();
+			Person person = new Person();
+			person.setName("Pham Van Hinh");
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

@@ -1,0 +1,8 @@
+package Website;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Todo {
+
+}

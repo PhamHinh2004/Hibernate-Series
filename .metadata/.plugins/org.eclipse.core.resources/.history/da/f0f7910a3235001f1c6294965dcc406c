@@ -1,0 +1,10 @@
+package Website;
+
+import jakarta.persistence.Entity;
+
+
+// @Entity : đanh dấu đây là một 1 Entity trong database
+@Entity
+public class Book {
+
+}

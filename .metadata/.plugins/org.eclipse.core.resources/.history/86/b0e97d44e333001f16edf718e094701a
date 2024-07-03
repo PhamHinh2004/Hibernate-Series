@@ -1,0 +1,29 @@
+package test;
+
+import org.hibernate.SessionFactory;
+
+import until.HibernateUtil;
+
+public class TestCat {
+	public static void main(String[] args) {
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+//			if(sessionFactory!=null) {
+//				Session session = sessionFactory.openSession();
+//				try {
+//					Transaction tran = session.beginTransaction();
+//					Cat cat = new Cat();
+//					cat.setName("Tom");
+//					cat.setSex(true);
+//					session.save(cat);
+//					tran.commit();
+//				} finally {
+//					// TODO: handle finally clause
+//				}
+//			}
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

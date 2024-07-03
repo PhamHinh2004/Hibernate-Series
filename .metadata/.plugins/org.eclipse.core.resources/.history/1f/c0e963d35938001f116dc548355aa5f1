@@ -1,0 +1,17 @@
+package Website;
+
+import java.sql.Date;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class GiaoVien extends ConNguoi{
+	public GiaoVien(String id, String hoVaTen, Date ngaySinh) {
+		super(id, hoVaTen, ngaySinh);
+		// TODO Auto-generated constructor stub
+	}
+
+	private String monPhuTrach;
+	
+	
+}

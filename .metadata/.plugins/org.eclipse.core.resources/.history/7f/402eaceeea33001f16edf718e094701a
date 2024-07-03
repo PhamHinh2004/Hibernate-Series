@@ -1,0 +1,47 @@
+package Website;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+
+public class App {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSesssionFactory();
+		/*
+		 * Mọi thao tác với DB bắt từ từ một session
+		 */
+		Session session = sessionFactory.getCurrentSession();
+
+		try {
+		    // Start the transaction
+		    session.getTransaction().begin();
+
+		    // Construct the JPQL query string
+		    String jpql = "select e from " + Todo.class.getName() + " e";
+		    System.out.println("Executing query: " + jpql);
+
+		    // Create the query
+		    Query<Todo> query = session.createQuery(jpql, Todo.class);
+
+		    // Execute the query and get the results
+		    List<Todo> todos = query.getResultList();
+		    System.out.println("Number of Todos retrieved: " + todos.size());
+
+		    // Print each Todo
+		    for (Todo todo : todos) {
+		        System.out.println(todo);
+		    }
+
+		    // Commit the transaction
+		    session.getTransaction().commit();
+		} catch (Exception e) {
+		    // Rollback the transaction in case of an error
+		    session.getTransaction().rollback();
+		    e.printStackTrace();  // Print the stack trace to understand the exception
+		}
+
+
+	}
+}
